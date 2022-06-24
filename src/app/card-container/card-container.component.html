@@ -1,0 +1,16 @@
+<ng-template #radioTemplate let-Id="itemId" let-itemName="itemName" let-itemPrice="itemPrice"
+    let-itemDiscount="itemDiscount" let-color="color">
+    <app-card-block (updateSelected)="setItemDescription($event)" itemDiscount="{{itemDiscount}}" itemId="{{Id}}"
+        itemPrice="{{itemPrice-itemPrice*currentDiscount/100}}" itemName="{{itemName}}"><b #elem>{{color}}</b>
+    </app-card-block>
+</ng-template>
+
+
+<button (click)="applyDiscount()">I want Discount</button>
+
+<div class="product-item" *ngFor="let item of products">
+    <ng-container
+        *ngTemplateOutlet="radioTemplate; context:{itemId:item.id, itemName:item.name, itemPrice:item.price, itemDiscount:currentDiscount, color:item.color}">
+    </ng-container>
+</div>
+<div class="product">{{productDescription}}</div>

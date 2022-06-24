@@ -1,0 +1,11 @@
+<h3>List with input</h3>
+<p *ngFor="let item of list"> 
+    <app-list-item listData="{{item}}"></app-list-item>
+</p>
+
+
+<hr>
+<h3>List with ng-content</h3>
+<p *ngFor="let item of list"> 
+    <app-list-item >{{item}}</app-list-item>
+</p>

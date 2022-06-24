@@ -1,0 +1,11 @@
+<p *ngIf="listData == undefined;then contentData; else inputData;"></p>
+
+
+<ng-template #contentData>
+    * <ng-content></ng-content>
+</ng-template>
+
+
+<ng-template #inputData>
+    - {{listData}}
+</ng-template>
