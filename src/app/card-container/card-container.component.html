@@ -7,10 +7,11 @@
 
 
 <button (click)="applyDiscount()">I want Discount</button>
-
-<div class="product-item" *ngFor="let item of products">
-    <ng-container
-        *ngTemplateOutlet="radioTemplate; context:{itemId:item.id, itemName:item.name, itemPrice:item.price, itemDiscount:currentDiscount, color:item.color}">
-    </ng-container>
+<div class="container">
+    <div class="product-item" *ngFor="let item of products">
+        <ng-container
+            *ngTemplateOutlet="radioTemplate; context:{itemId:item.id, itemName:item.name, itemPrice:item.price, itemDiscount:currentDiscount, color:item.color}">
+        </ng-container>
+    </div>
 </div>
 <div class="product">{{productDescription}}</div>
